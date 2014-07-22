@@ -36,6 +36,7 @@ hosts =
 		& Docker.garbageCollected `period` Daily
 		& Cron.runPropellor "30 * * * *"
 	, host "mxconsole-run"
+	      & ipv4 "192.168.42.2" 	
 	-- A generic webserver in a Docker container.
 	, Docker.container "webserver" "joeyh/debian-stable"
 		& os (System (Debian Stable) "amd64")
